@@ -9,9 +9,6 @@ The MAC and the message data is further encrypted using the XTEA algorithm in CF
 The random seed is appended to the hidden secret and is used with the user supplied password to decrypt the hidden message using XTEA block cipher according to the encryption process. Further the decrypted secret is authenticated by comparing the embeded hmac hash with the HMAC-SHA256 of the extracted hidden message and the user supplied mac password.
 
 # Installation
-You may want to install Matroschka in a `virtualenv` that has `Pillow` installed. Clone the repo and navigate to the root dir. That's it.
-
-
 
 ```
 pip install qrcode
