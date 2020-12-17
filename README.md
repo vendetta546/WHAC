@@ -36,10 +36,12 @@ Or in Python:
 import qrcode
 from qrcode.image.pure import PymagingImage
 img = qrcode.make('Some data here', image_factory=PymagingImage)
+```
+#STEPS TO DOWNLOAD
+
 pip install Pillow
 https://github.com/vendetta546/WHAC
 cd WHAC
-```
 
 # Usage
 Only losless image formats are supported. Therefore It is recommended to use PNG or BMP images to hide your secret. The secret can be either a text file with the `.txt` extension or an image with the `.png` extension and format. 
