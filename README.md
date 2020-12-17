@@ -1,5 +1,5 @@
 # WHAC
-WHAC is a command-line steganography tool written in pure Python. You can use it to hide and encrypt images or text in the least significant bits of pixels in an image.
+WHAC is a command-line steganography tool written in Python. You can use it to hide and encrypt images or text in the least significant bits of pixels in an image.
 
 # Encryption
 The encryption uses HMAC-SHA256 to authenticate the hidden data. Therefore the supplied MAC password is hashed with SHA-256 digest to generate the HMAC-SHA256 key. 
