@@ -13,13 +13,6 @@ The random seed is appended to the hidden secret and is used with the user suppl
 ```
 pip install qrcode
 
-ex: qr "Some text" > test.png
-
-or use python
-
-import qrcode
-img = qrcode.make('Some data here')
-
 Install the following two packages:
 
 pip install git+git://github.com/ojii/pymaging.git#egg=pymaging
