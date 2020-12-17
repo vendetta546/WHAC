@@ -8,3 +8,53 @@ The MAC and the message data is further encrypted using the XTEA algorithm in CF
 # Decryption
 The random seed is appended to the hidden secret and is used with the user supplied password to decrypt the hidden message using XTEA block cipher according to the encryption process. Further the decrypted secret is authenticated by comparing the embeded hmac hash with the HMAC-SHA256 of the extracted hidden message and the user supplied mac password.
 
+# Installation
+You may want to install Matroschka in a `virtualenv` that has `Pillow` installed. Clone the repo and navigate to the root dir. That's it.
+
+
+
+```
+pip install qrcode
+
+ex: qr "Some text" > test.png
+
+or use python
+
+import qrcode
+img = qrcode.make('Some data here')
+
+Install the following two packages:
+
+pip install git+git://github.com/ojii/pymaging.git#egg=pymaging
+pip install git+git://github.com/ojii/pymaging-png.git#egg=pymaging-png
+
+From your command line:
+
+qr --factory=pymaging "Some text" > test.png
+Or in Python:
+
+import qrcode
+from qrcode.image.pure import PymagingImage
+img = qrcode.make('Some data here', image_factory=PymagingImage)
+pip install Pillow
+https://github.com/vendetta546/WHAC
+cd WHAC
+```
+
+# Usage
+Only losless image formats are supported. Therefore It is recommended to use PNG or BMP images to hide your secret. The secret can be either a text file with the `.txt` extension or an image with the `.png` extension and format. 
+
+> Note: If your image contains transparent pixels, most likely artifacts will be visible after embedding data. This is caused by the manipulation of the least-significant bit in every pixels color channels.
+
+**Hide Secret**
+
+```
+python whac.py -hide -m <mac-password> -k <password> <secret> <image>
+```
+
+**Reveal Secret**
+
+``` 
+python whac.py -open -m <mac-password> -k <password> <image>
+```
+
